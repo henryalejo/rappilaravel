@@ -35,12 +35,12 @@
     <div class="container">
       <div class="row">
         <div class="" id="cubeform">
-            <?=Form::open(['route' => 'cube.algorithm', 'class' => 'form-vertical'])?>
+            <?=Form::open(['route' => 'algorithm', 'class' => 'form-vertical'])?>
             <fieldset class="form-group">
               <h2>
                 <?=Form::label('datatext','Write The test Case Here')?>
               </h2>
-            <?=Form::textarea('testcases  ', 'testcase', ['id'=>'datatext', 'class'=>'form-control'], ['required'])?>
+            <?=Form::textarea('testcases', (!empty($testcases))? $testcases:'testcases',  ['id'=>'datatext', 'class'=>'form-control'], ['required'])?>
             <?=Form::submit('Evaluate', ['class'=>'btn btn-success form-control'])?>
           </fieldset>
             <?=Form::close()?>
@@ -52,7 +52,11 @@
       <div class="row">
         <div class="jumbotron">
           <div class="">
-            my result
+            @if(!empty($result))
+              @foreach($result as $element)
+                {{$element}}<br>
+              @endforeach
+            @endif
           </div>
         </div>
       </div>

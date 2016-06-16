@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
+use App\Library\Summation;
 use View;
+
 class CubeController extends Controller
 {
     /**
@@ -24,9 +25,13 @@ class CubeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function algorithm()
+    public function algorithm(Request $request)
     {
-        //
+      //$cube = new Cube;
+      //$result = $cube->is_ok($request->input('testcases'));
+      $result = Summation::execute($request->input('testcases'));
+      return view('main')->with('result',$result)->with('testcases',$request->input('testcases'));
+
     }
     /**
      * Show the form for creating a new resource.
