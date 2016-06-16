@@ -1,3 +1,11 @@
+# Cube Summation
+
+To see this application on line go to http://rappilaravel.herokuapp.com/
+
+Based on https://www.hackerrank.com/challenges/cube-summation
+
+Created by Henry Alejandro Orjuela
+
 # Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)

@@ -29,6 +29,20 @@
         </div>
         <!-- /.container -->
     </nav>
+<?php
+$example="2
+4 5
+UPDATE 2 2 2 4
+QUERY 1 1 1 3 3 3
+UPDATE 1 1 1 23
+QUERY 2 2 2 4 4 4
+QUERY 1 1 1 3 3 3
+2 4
+UPDATE 2 2 2 1
+QUERY 1 1 1 1 1 1
+QUERY 1 1 1 2 2 2
+QUERY 2 2 2 2 2 2";
+?>
 
     <div class="row" style="min-height:50px">
     </div>
@@ -40,7 +54,7 @@
               <h2>
                 <?=Form::label('datatext','Write The test Case Here')?>
               </h2>
-            <?=Form::textarea('testcases', (!empty($testcases))? $testcases:'testcases',  ['id'=>'datatext', 'class'=>'form-control'], ['required'])?>
+            <?=Form::textarea('testcases', (!empty($testcases))? $testcases:$example,  ['id'=>'datatext', 'class'=>'form-control'], ['required'])?>
             <?=Form::submit('Evaluate', ['class'=>'btn btn-success form-control'])?>
           </fieldset>
             <?=Form::close()?>
