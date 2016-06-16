@@ -45,6 +45,16 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 | the client's browser allowing them to enjoy the creative
 | and wonderful application we have prepared for them.
 |
+
+try {
+
+
+} catch(\Exception $e) {
+    echo "<pre>";
+    echo $e;
+    echo "</pre>";
+}
+
 */
 
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);

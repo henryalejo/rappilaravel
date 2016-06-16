@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//::get('/', function () {   return view('main');});
+
+Route::resource('/','CubeController');
+Route::post('cube', ['as' => 'cube.algorithm', 'uses' => 'CubeController@algorithm']);
