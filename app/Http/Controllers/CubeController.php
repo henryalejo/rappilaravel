@@ -27,8 +27,6 @@ class CubeController extends Controller
      */
     public function algorithm(Request $request)
     {
-      //$cube = new Cube;
-      //$result = $cube->is_ok($request->input('testcases'));
       $result = Summation::execute($request->input('testcases'));
       return view('main')->with('result',$result)->with('testcases',$request->input('testcases'));
 
