@@ -7,7 +7,7 @@ class Summation {
   static function execute($dataText) {
     try{
       $arrayByLine = explode("\n", $dataText);
-      $output=array();
+      $output=[];
       $numberTestCases = intval(array_shift($arrayByLine));
       for ($t=0; $t < $numberTestCases ; $t++) {
         $nAndMLine = array_shift($arrayByLine)  ;
@@ -29,7 +29,7 @@ class Summation {
         return  $output;
     }
     catch(\Exception $e){
-        return array('Error, Please check Input');
+        return ['Error, Please check Input'];
     }
 
   }
